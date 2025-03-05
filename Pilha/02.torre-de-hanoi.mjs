@@ -15,3 +15,38 @@
     conforme a imagem "Torre-Impressao.png". DEPOIS das movimentações, a TorreA deve estar com os discos na
     ordem [1,2,3,4] e as outras duas torres (TorreB e TorreC) devem estar vazias.
 */
+
+import Stack from "./Stack.mjs";
+
+let TorreA = new Stack()
+let TorreB = new Stack()
+let TorreC = new Stack()
+
+TorreB.push(1)
+TorreB.push(2)
+TorreB.push(3)
+TorreB.push(4)
+
+console.log("Torre A: " + TorreA.print())
+console.log("Torre B: " + TorreB.print())
+console.log("Torre C: " + TorreC.print())
+
+TorreC.push(TorreB.pop())
+TorreA.push(TorreB.pop())
+TorreA.push(TorreC.pop())
+TorreC.push(TorreB.pop())
+TorreB.push(TorreA.pop())
+TorreC.push(TorreA.pop())
+TorreC.push(TorreB.pop())
+TorreA.push(TorreB.pop())
+TorreA.push(TorreC.pop())
+TorreB.push(TorreC.pop())
+TorreB.push(TorreA.pop())
+TorreA.push(TorreC.pop())
+TorreC.push(TorreB.pop())
+TorreA.push(TorreB.pop())
+TorreA.push(TorreC.pop())
+
+console.log("\nTorre A: " + TorreA.print())
+console.log("Torre B: " + TorreB.print())
+console.log("Torre C: " + TorreC.print())
